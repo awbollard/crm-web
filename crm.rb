@@ -62,13 +62,6 @@ delete "/contacts/:id" do
   end
 end
 
-get "/delete_contact" do
-	<form action="/contacts/<%= @contact.id %>" method="post">
-	  <input type="hidden" name="_method" value="delete">
-	  <input type="submit" name="Delete Contact">
-	</form>
-end
-
 post '/contacts' do
   new_contact = Contact.new(params[:first_name], params[:last_name], params[:email], params[:note])
   $rolodex.add_contact(new_contact)
